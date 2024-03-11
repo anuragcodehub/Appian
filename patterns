@@ -1,0 +1,13 @@
+##Case 1 - Create below pattern in Appian
+
+*
+**
+***
+****
+*****
+
+Solution - 
+        a!forEach(
+  items: enumerate(5),
+  expression: joinarray(repeat(fv!index, "*"))
+)
