@@ -24,4 +24,6 @@ Solution -
             Create an Appian process and configure all activities required to be done
             Configure the start node of the process model to configure the timer when the process needs to be triggered automatically
 
-##Case 3 - 
+##Case 3 - Good design practices during creation of Integrations in Appian
+Solution - 
+            
