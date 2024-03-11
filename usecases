@@ -3,7 +3,7 @@ Here we will document details of Appian usecases implementation
 ##Case 1 - User needs to upload excel file having 100 columns in Appian, validate and transform the data and populate data in different tables. 
 Solution - 
             Create a staging / temp table having same number of columns as in excel
-            Create an Appian process to dump the uploaded excel file data to temp table
+            Create an Appian process to validate the file and dump the uploaded excel file data to temp table
               Plugin to be used - https://community.appian.com/b/appmarket/posts/excel-tools , Smart Service - Import Excel to Database
             Create stored procedures for data validation and transformation
             Show the final results of file upload to end user
