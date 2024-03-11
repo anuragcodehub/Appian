@@ -1,0 +1,22 @@
+##Case 1 - Check whether the input email address is correct or not
+Soluton - 
+        define rule input emailAddress (Text)
+        if(
+  a!isNullOrEmpty(ri!emailAddress),
+  "no email address provided",
+  a!localVariables(
+    local!validDomains: { "appian.com", "gmail.com" },
+    contains(
+      a!forEach(
+        items: local!validDomains,
+        expression: regexmatch(
+          concat("^[\w]+(@){1}(", fv!item, "){1}$"),
+          ri!emailAddress
+        )
+      ),
+      true
+    )
+  )
+)
+
+          
