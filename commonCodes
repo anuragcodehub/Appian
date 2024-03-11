@@ -1,1 +1,16 @@
+##Case 1 - Sort the data of dictinary , map type
+Solution - 
 
+a!localVariables(
+  local!sampleData: {
+    a!map(id: 1, text: "a"),
+    a!map(id: 5, text: "e"),
+    a!map(id: 4, text: "d"),
+    a!map(id: 2, text: "b"),
+    a!map(id: 3, text: "c")
+  },
+  todatasubset(
+    arrayToPage: local!sampleData,
+    pagingConfiguration: a!pagingInfo(1, - 1, a!sortInfo("text", false()))
+  ).data
+)
