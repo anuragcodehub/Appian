@@ -3,3 +3,24 @@ The questions and suggestions below are intended for an Appian profile interview
 #QuestionsAndSuggestions
 
 Explain the any Appian project which you build from scratch.
+What are the latest Appian features introduced in current and last few Appian releases?
+What are the Appian best practices for development
+    https://docs.appian.com/suite/help/24.1/sail/guidance.html
+    https://docs.appian.com/suite/help/24.1/appian-recommendations.html
+    https://docs.appian.com/suite/help/24.1/expressions-best-practices.html
+What are the different ways to the start the process in Appian
+    https://docs.appian.com/suite/help/24.1/Ways_to_Start_a_Process_From_a_Process.html
+How to debug the Process Model errors
+    https://docs.appian.com/suite/help/24.1/Testing_and_Debugging_Problems_with_Process_Models.html
+Whats the difference between Record action and related action
+Whats the difference between Appian Site and Appian Portal
+    https://docs.appian.com/suite/help/24.1/Sites.html
+    https://docs.appian.com/suite/help/24.1/portals-home.html
+    Appian Portals is currently only supported for Appian Cloud customers. Additionally, if your environment is behind a VPN, you cannot connect a portal to it to read or write data.
+Whats the difference between Escalation and Exception in process model.
+    https://community.appian.com/discussions/f/process/21525/escalation-and-exception
+What are the Appian objects which don't require security to be defined
+    CDT
+What is the decision object in Appian
+
+
