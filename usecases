@@ -8,3 +8,8 @@ Solution -
             Create stored procedures for data validation and transformation
             Show the final results of file upload to end user
         
+
+##Case 2- User needs to implement a scheduler in Appian to run periodically and perform certain set of activities in Appian
+Solution - 
+            Create an Appian process and configure all activities required to be done
+            Configure the start node of the process model to configure the timer when the process needs to be triggered automatically
