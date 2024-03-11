@@ -1,4 +1,4 @@
-##Case 1 - Sort the data of dictinary , map type
+##Case 1 - Sort the data of map type
 Solution - 
 
 a!localVariables(
@@ -13,4 +13,40 @@ a!localVariables(
     arrayToPage: local!sampleData,
     pagingConfiguration: a!pagingInfo(1, - 1, a!sortInfo("text", false()))
   ).data
+)
+
+##Case 2 - Sort all types of data irrespective of data type
+Solution - 
+          Define rule input data (Any Type), sortDesc (Boolean), sortField (Text)
+if(
+  a!isNullOrEmpty(ri!data),
+  "",
+  a!localVariables(
+    local!sortDesc: a!defaultValue(ri!sortDesc, false),
+    a!match(
+      value: typeof(ri!data),
+      equals: typeof("Text"),
+      then: joinarray(
+        sorttextarray(char(code(ri!data)), local!sortDesc)
+      ),
+      equals: typeof(1),
+      then: joinarray(
+        sortintegerarray(char(code(ri!data)), local!sortDesc)
+      ),
+      equals: typeof({ 1, 2, 3 }),
+      then: sortintegerarray(ri!data, local!sortDesc),
+      equals: typeof({ "A", "b", "c" }),
+      then: sorttextarray(ri!data, local!sortDesc),
+      equals: typeof({ "A", "b", 1 }),
+      then: sorttextarray(ri!data, local!sortDesc),
+      default: if(
+        a!isNullOrEmpty(ri!sortField),
+        "Provide sort field",
+        todatasubset(
+          arrayToPage: ri!data,
+          pagingConfiguration: a!pagingInfo(1, - 1, a!sortInfo(ri!sortField, false()))
+        ).data
+      )
+    )
+  )
 )
