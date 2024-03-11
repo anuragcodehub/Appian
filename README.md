@@ -19,3 +19,24 @@ The Appian Guarantee.
 
 https://community.appian.com/members/anurags5053 
 https://community.appian.com/members/anurags8175
+
+# Appian Certifications
+Source / Links to view updated Appian Policies regarding certifications - 
+
+https://community.appian.com/learn/certifications
+https://community.appian.com/learn/certifications/p/faqs
+https://community.appian.com/learn/certifications/p/policies
+https://community.appian.com/learn/certifications/p/recertification
+
+Appian professionals have the option to pursue various Appian certifications, including Analyst, Associate Developer (Project Ready), Senior Developer {Project Independant}, and Lead Developer {Project Lead}, each of which is currently priced at $200.
+
+If practitioners have any inquiries or concerns regarding certifications, they can contact Appian support at certifications@appian.com
+
+Your Appian certification remains valid as long as you adhere to the recertification guidelines. For further details on maintaining your certification, refer to the Appian Recertification Guidelines page.
+
+New developers often tend to gather resources for preparing for Appian certifications from various sources, even though all the necessary information and preparation resources are available on the Appian Community. It is advisable to rely on the official documentation provided by Appian. For accurate and updated details, please refer to the following official links:
+
+https://community.appian.com/learn/certifications/p/certified-analyst
+https://community.appian.com/learn/certifications/p/associate-developer
+https://community.appian.com/learn/certifications/p/senior-developer
+https://community.appian.com/learn/certifications/p/lead-developer
