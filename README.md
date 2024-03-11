@@ -20,7 +20,7 @@ The Appian Guarantee.
 https://community.appian.com/members/anurags5053 
 https://community.appian.com/members/anurags8175
 
-# Appian Certifications
+# Certifications
 Source / Links to view updated Appian Policies regarding certifications - 
 
 https://community.appian.com/learn/certifications
