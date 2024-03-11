@@ -1,5 +1,15 @@
 Here we will document details of Appian usecases implementation
 
+##Case 0 - User needs to build a new Appian Application, how can user start and what best practices needs to be followed during development
+Solution - 
+            Connect with business and end user to understand current process and bottlenecks properly. Document all details along with Appian best practices to be followed
+            Break the big processes into small functional cases for development team to start the development with
+            Define the different user roles who can access the appian process and configure security of appian objects accordingly
+            Have a database design ready before full fledge development is started, confirm database design with architect or lead, explain everyone in team about the design
+            Start building the Appian application
+            Get the functionalities reviewed by business or end user periodically to avoid deviations from actual expectations
+
+
 ##Case 1 - User needs to upload excel file having 100 columns in Appian, validate and transform the data and populate data in different tables. 
 Solution - 
             Create a staging / temp table having same number of columns as in excel
@@ -9,7 +19,9 @@ Solution -
             Show the final results of file upload to end user
         
 
-##Case 2- User needs to implement a scheduler in Appian to run periodically and perform certain set of activities in Appian
+##Case 2 - User needs to implement a scheduler in Appian to run periodically and perform certain set of activities in Appian
 Solution - 
             Create an Appian process and configure all activities required to be done
             Configure the start node of the process model to configure the timer when the process needs to be triggered automatically
+
+##Case 3 - 
