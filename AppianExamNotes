@@ -1,0 +1,8 @@
+Appian Lead Developer Notes
+1. Out of the box export to excel functions or smart services 
+2. Explain statement 
+3. Timezone for subprocess (consider parent and subprocess has different time zone)
+4. System logs matching 
+5. Appian functions matching 
+6. Rest Api configuration 
+7. Best practices if multiple teams are working in same environment
