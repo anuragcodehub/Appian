@@ -26,4 +26,79 @@ Solution -
 
 ##Case 3 - Good design practices during creation of Integrations in Appian
 Solution - 
+
+When creating integrations in Appian, it's essential to follow best practices to ensure efficient and effective design. Here are some key best practices for designing and creating integrations in Appian based on the provided sources:
+
+1. **Naming and Configuration**:
+   - Follow the recommended naming standard when naming the integration.
+   - Provide a brief description of the integration to enhance clarity.
+   - Save the integration in an appropriate folder for easy organization and management[1][3].
+
+2. **Connection Details and Parameters**:
+   - Select a connected system or provide authentication details based on the integration requirements.
+   - Define request body, content type, parameters, and headers as needed for the integration method (e.g., POST, PUT, PATCH)[1][3].
+
+3. **Testing and Troubleshooting**:
+   - Test the integration thoroughly to ensure proper functionality.
+   - View details about the request, response, errors, and recommended next steps in the integration designer.
+   - Define inputs for reusability and configure default test values for efficient testing[3].
+
+4. **Error Handling**:
+   - Add custom error handling within the integration to construct custom error messages.
+   - Use a!integrationError() to return errors when needed, ensuring proper error handling and management[3].
+
+5. **Automatic Parsing**:
+   - Configure automatic parsing for JSON responses to convert results into Appian values automatically.
+   - This feature simplifies data handling and allows for easy access to response data using dot notation and index()[3].
+
+By adhering to these best practices, you can design and create integrations in Appian that are well-structured, efficient, and robust, facilitating seamless data exchange and integration with external systems.
+
+Citations:
+[1] https://docs.appian.com/suite/help/24.1/Create_an_Integration.html
+
+##Case 4 - Good design practices during creation of Portals in Appian
+Solution - 
+
+To create an Appian object Portal, here are some best practices for designing and creating portals based on the provided sources:
+
+1. **Naming and Configuration**:
+   - Enter a name following the recommended standard for the portal object.
+   - Define a display name for the portal visible to end-users.
+   - Assign a unique web address identifier for the portal.
+   - Provide a description for the portal object.
+   - Ensure proper configurations for publishing the portal and setting up the web address[1].
+
+2. **Security**:
+   - Control access to the portal using service accounts.
+   - Implement design-time and runtime security protections to safeguard the portal.
+   - Define different permission levels for administrators, editors, and viewers to manage portal actions[1].
+
+3. **Design Guidance**:
+   - Follow design guidance recommendations and warnings to reinforce best practices.
+   - Address warnings related to invalid parameters, misconfigured data stores, missing document permissions, and connected system plug-ins.
+   - Update rule inputs and configurations as needed to maintain optimal portal performance[3].
+
+4. **Compatibility and Integration**:
+   - Ensure compatibility with portals by using components and functions that are compatible with portal environments.
+   - Utilize integration objects and web APIs to connect partially compatible capabilities to the portal.
+   - Create custom integrations to bridge the portal with Appian and allow seamless data flow[2].
+
+5. **Performance Optimization**:
+   - Avoid unnecessary database queries in interfaces, expression rules, and other objects.
+   - Optimize looping functions by using the Choose() function instead of nested IF conditions.
+   - Implement paging and filtering for records to enhance performance and avoid loading all items at once[4].
+
+6. **User Experience**:
+   - Design the portal interface considering time zones and localization.
+   - Ensure a seamless experience for users accessing the portal without the need to log in.
+   - Use low-code tools to create web apps that connect users to information and processes efficiently[5].
+
+By following these best practices, you can design and create an Appian object Portal that is secure, efficient, and user-friendly, meeting the needs of your organization and audience effectively.
+
+Citations:
+[1] https://docs.appian.com/suite/help/24.1/portal-object.html
+[2] https://docs.appian.com/suite/help/24.1/portals-design.html
+[3] https://docs.appian.com/suite/help/24.1/appian-recommendations.html
+[4] https://community.appian.com/discussions/f/best-practices/23534/best-practices-to-improve-performance-of-each-appian-object
+[5] https://docs.appian.com/suite/help/24.1/sail/ux-portals.html
             
