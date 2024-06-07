@@ -1,0 +1,130 @@
+# Usecase - External System has document stored as base64 string, and it needs to be uploaded to Appian
+
+Appian stored document as it is in Appian in-built document repositary. We can either migrate base64 string to Appian database and use custom plugin to generate the Appian document or we can expose Appian API to get base64 string and store it as Appian document
+
+Method 1 - Migrating base64 string to Appian database and using custom plugin to generate Appian document
+      https://community.appian.com/b/appmarket/posts/base64-document-database-integration
+
+Method 2 - Exposing the Appian API to get base64 string and create Appian document
+    Implementation - 
+      1. API web API Object (getBase64Document) - To convert base64 string and return as JSON body, and to be consumed by Appian Integration Object
+
+    a!localVariables(
+  local!value: { document: http!request.body },
+  if(
+    a!isNotNullOrEmpty(http!request.body),
+    a!httpResponse(
+      /*
+    * Set an HTTP header that tells the client that the body of the response
+    * will be JSON-encoded.
+    */
+      headers: {
+        a!httpHeader(
+          name: "Content-Type",
+          value: "application/json"
+        )
+      },
+      body: a!toJson(value: local!value)
+    ),
+    a!httpResponse(
+      statusCode: 400,
+      headers: {},
+      body: "Document Not Provided"
+    )
+  )
+)a!localVariables(
+  local!value: { document: http!request.body },
+  if(
+    a!isNotNullOrEmpty(http!request.body),
+    a!httpResponse(
+      /*
+    * Set an HTTP header that tells the client that the body of the response
+    * will be JSON-encoded.
+    */
+      headers: {
+        a!httpHeader(
+          name: "Content-Type",
+          value: "application/json"
+        )
+      },
+      body: a!toJson(value: local!value)
+    ),
+    a!httpResponse(
+      statusCode: 400,
+      headers: {},
+      body: "Document Not Provided"
+    )
+  )
+)
+
+    2. API Integration Object - To convert base64 string and return as JSON body, and to be consumed by Appian Integration Object
+
+  Configuration details : 
+      URL - API endpoint created in step 1
+      Authentication - NONE
+      Method - POST
+      Headers - Appian-API-Key (to connect to API)
+      Request Body - Content Type : JSON(application/JSON)
+            trim(substitute(ri!docValue,char(10),""))
+      
+      Automatically convert CDT, dictionary, or list to JSON - Select Yes
+      Remove fields with null or empty values from generated JSON - Select Yes
+      Rule Input Name - documentName(Text) and docValue(Text)
+      Response - Response Body Parsing (Convert JSON to Appian Value)
+      Convert base64 values to Appian documents - Select Yes
+
+      Click Test Integration and then configure below
+      Response Body Location - fv!result.body.document : ri!documentName
+      Save document in - Knowledge Center folder name
+
+Note : Above object will create Appian document from base64 string and store to Appian KC folder
+
+    3. API web API Object - To expose endpoint for external system to upload base64 document
+  Method : POST
+  Headers : Content-Type - application/json
+  Body : 
+    {
+"documentName": "Document Name" ,
+"base64String" : "Base 64 String"
+}
+  API code : 
+  a!localVariables(
+  local!requestBody: a!fromJson(http!request.body),
+  local!base64String: index(local!requestBody, "base64String", ""),
+  local!documentName: index(local!requestBody, "documentName", ""),
+  rule!RES_UploadBase64Document(
+    documentName: local!documentName,
+    docValue: local!base64String,
+    onSuccess: a!httpResponse(
+      statusCode: 200,
+      headers: {
+        a!httpHeader(
+          name: "Content-Type",
+          value: "application/json"
+        )
+      },
+      body: a!localVariables(
+        local!resultBody: fv!result.body.document,
+        a!toJson(
+          {
+            APPIAN_DOCUMENT_ID: document(local!resultBody, "id"),
+            NAME: document(local!resultBody, "name"),
+            EXTENSION: document(local!resultBody, "extension"),
+            SIZE: document(local!resultBody, "size"),
+          }
+        )
+      )
+    ),
+    onError: a!httpResponse(
+      statusCode: 500,
+      headers: {
+        a!httpHeader(
+          name: "Content-Type",
+          value: "application/json"
+        )
+      },
+      body: a!toJson({ error: fv!error })
+    )
+  )
+)
+
