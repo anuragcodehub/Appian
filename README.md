@@ -20,6 +20,16 @@ The Appian Guarantee.
 https://community.appian.com/members/anurags5053 
 https://community.appian.com/members/anurags8175
 
+# Design Patterns for new Project
+https://community.appian.com/success/w/guide/3066/antipatterns-solution-design-mistakes-to-avoid-in-appian
+https://community.appian.com/success/w/guide/3064/how-to-create-flexible-processes
+https://community.appian.com/success/w/article/3048/how-to-create-memory-efficient-models
+https://community.appian.com/success/w/guide/3314/best-practices-appian-user-stories#heuristics_of_complex_user_stories
+https://community.appian.com/success/w/guide/3294/sql-scripts-that-can-be-rerun
+https://community.appian.com/success/w/guide/3058/frequently-reused-appian-components
+https://community.appian.com/success/w/guide/3491/add-error-handling-to-stored-procedures
+https://community.appian.com/success/w/guide/3253/integrating-with-docusign
+
 # Certifications
 Source / Links to view updated Appian Policies regarding certifications - 
 
